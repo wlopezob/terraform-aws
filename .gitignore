@@ -58,7 +58,7 @@ terraform.rc
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,terraform
 k8s/.terraform.lock.hcl
-tf/main.destroy.tfplan
-tf/main.tfplan
+k8s/main.destroy.tfplan
+k8s/main.tfplan
 k8s/windows_386
 k8s/main.destroy.tfplan
