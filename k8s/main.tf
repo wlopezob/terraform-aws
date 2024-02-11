@@ -21,7 +21,7 @@ resource "aws_eks_cluster" "casino-eks-cluster" {
   }
 }
 
-## Create the EKS node group
+
 
 ### create role group
 resource "aws_iam_role" "casino-role" {
@@ -63,8 +63,8 @@ resource "aws_eks_node_group" "casino-eks-node-group" {
   subnet_ids      = toset(data.aws_subnets.vpc-id.ids)
 
   scaling_config {
-    desired_size = 1
-    max_size     = 1
+    desired_size = 2
+    max_size     = 3
     min_size     = 1
   }
 }
