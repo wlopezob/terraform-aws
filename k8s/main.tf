@@ -63,8 +63,8 @@ resource "aws_eks_node_group" "casino-eks-node-group" {
   subnet_ids      = toset(data.aws_subnets.vpc-id.ids)
 
   scaling_config {
-    desired_size = 2
-    max_size     = 3
+    desired_size = 1
+    max_size     = 1
     min_size     = 1
   }
 }
