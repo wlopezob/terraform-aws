@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apirust
+  namespace: casino
+  labels:
+    app: apirust
+    env: dev
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: apirust
+  template:
+    metadata:
+      labels:
+        app: apirust
+    spec:
+      containers:
+      - name: apirust
+        image: wlopezob/apirust
+        ports:
+        - containerPort: 8080

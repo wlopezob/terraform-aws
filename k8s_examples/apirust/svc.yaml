@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apirust
+  namespace: casino
+  labels:
+    app: apirust
+    env: dev
+spec:
+  type: LoadBalancer
+  selector:
+    app: apirust
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
