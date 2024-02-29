@@ -2,6 +2,9 @@
 ### start terraform
 terraform init
 
+### update providers
+terraform init -upgrade
+
 ### create the plan
 terraform plan -out main.tfplan
 
