@@ -21,7 +21,7 @@ terraform apply main.destroy.tfplan
 # EKS
 
 ### get kubeconfig
-aws eks update-kubeconfig --region us-east-2  --name casino-eks-cluster
+aws eks update-kubeconfig --region us-east-1  --name casino01-eks-cluster
 
 ### execute kubectl with kubeconfig
 kubectl --kubeconfig=kubeconfig 
