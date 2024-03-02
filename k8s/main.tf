@@ -69,6 +69,7 @@ resource "aws_eks_node_group" "casino-eks-node-group" {
   }
 }
 
+
 provider "kubernetes" {
   host                   = aws_eks_cluster.casino-eks-cluster.endpoint
   cluster_ca_certificate = base64decode(aws_eks_cluster.casino-eks-cluster.certificate_authority.0.data)
@@ -96,12 +97,14 @@ provider "helm" {
   }
 }
 
+# create namespace
 resource "kubernetes_namespace" "example" {
   metadata {
     name = "example-namespace"
   }
 }
 
+# install ingress controller - gninx
 resource "helm_release" "ingress-nginx" {
   name       = "ingress-nginx"
   #repository = "https://kubernetes.github.io/ingress-nginx"
