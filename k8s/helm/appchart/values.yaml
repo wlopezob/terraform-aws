@@ -1,0 +1,36 @@
+namespace: casino
+env: dev
+# envs:
+#   - name: JAVA_OPTS
+#     value: "-Djava.awt.headless=true,-Xms768m,-Xmx768m,-XX:+UseG1GC,-XX:+DisableExplicitGC,-XshowSettings:properties,-XX:+UnlockExperimentalVMOptions,-XX:+UseCGroupMemoryLimitForHeap,-XX:MaxRAMFraction=1"
+#   - name: SPRING_CLOUD_CONFIG_LABEL
+#     value: "master"
+#   - name: SPRING_PROFILES_ACTIVE
+#     value: dev
+image:
+  imageRegistry: wlopezob
+  tag: latest
+  port: 8080
+deployment:
+  replicaCount: 2
+  # imagePullSecretsName: '' #secret docker login
+  #labels:
+    #action: custom
+    #demo: demo01
+resources_plan:
+  cpu_limits: 0.5
+  cpu_requests: 40m
+  memory_limits: 512M
+  memory_requests: 256M
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  path: /apirust-v1
+  #targetPath: /apirust-v1
+  pathType: ImplementationSpecific
+  port: 80
+  #host: apirust.com
