@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: app-database-v1
+  webflux:
+    base-path: /app-database/v1
+
