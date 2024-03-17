@@ -62,3 +62,5 @@ k8s/main.destroy.tfplan
 k8s/main.tfplan
 k8s/windows_386
 k8s/main.destroy.tfplan
+k8s/helm/casino-0.1.0.tgz
+k8s/helm/index.yaml
