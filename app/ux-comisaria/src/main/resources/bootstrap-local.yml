@@ -1,0 +1,6 @@
+server:
+  port: 8081
+http-client:
+  app-database-v1:
+    url: http://localhost:8080/app-database/v1
+

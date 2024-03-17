@@ -1,7 +1,7 @@
 package com.wlopezob.appdatabase.controllers;
 
 
-import com.wlopezob.appdatabase.model.ComisariaResponse;
+import com.wlopezob.appdatabase.models.ComisariaResponse;
 import com.wlopezob.appdatabase.service.ComisariaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

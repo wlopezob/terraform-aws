@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ux-comisaria-v1
+  webflux:
+    base-path: /ux-comisaria/v1

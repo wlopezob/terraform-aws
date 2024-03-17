@@ -1,4 +1,4 @@
-package com.wlopezob.appdatabase.model.entities;
+package com.wlopezob.appdatabase.models.entities;
 
 import lombok.Getter;
 import lombok.Setter;

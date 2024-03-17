@@ -1,4 +1,4 @@
-package com.wlopezob.appdatabase.model;
+package com.wlopezob.uxcomisaria.models;
 
 import lombok.Getter;
 import lombok.Setter;
