@@ -1,0 +1,35 @@
+namespace: casino
+# envs:
+#   - name: SPRING_CLOUD_CONFIG_LABEL
+#     value: "master"
+#   - name: SPRING_PROFILES_ACTIVE
+#     value: dev
+deployment:
+  replicaCount: 3
+  # imagePullSecretsName: ""
+  # labels:
+  #   action: custom
+  #   demo: demo01
+image:
+  imageRegistry: wlopezob
+  tag: latest
+  port: 8080
+  
+env: des
+
+resources_plan:
+  cpu_limits: 0.5
+  cpu_requests: 40m
+  memory_limits: 512M
+  memory_requests: 256M
+
+service:
+  type: ClusterIP
+  servicePort: 80
+  targetPort: 8080
+ingress:
+  path: /apirust-v1
+  #targetPath: /apirust-v1
+  pathType: ImplementationSpecific
+  port: 80
+  #host: apirust.com
