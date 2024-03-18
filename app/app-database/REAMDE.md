@@ -19,3 +19,21 @@
 * el listado de ComisariaEntity se convierte a un listado de ComisariaResponse usando mapstruct
 * finalmente crear su clase implement
  
+
+# DOCKER
+
+### create network bridge
+```
+docker network create red-wlopezob
+```
+## Build app-database
+```
+docker build -t wlopezob/app-database .
+docker run --name cntappdatabase --network red-wlopezob -e SPRING_PROFILES_ACTIVE=local -e SERVER_PORT=80 -p 8080:80  wlopezob/app-database
+curl http://localhost:8080/app-database/v1/comisaria
+```
+
+## delete container
+```
+docker rm cntappdatabase
+```
