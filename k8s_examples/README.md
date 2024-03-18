@@ -6,3 +6,6 @@ k describe tiporecurso# para ver detalles
 
 #node(no)
 k get no
+
+## connect to pod containe
+kubectl -n comisaria exec -it pod/app-database-76dbdd6d5d-4tg6g -- /bin/bash

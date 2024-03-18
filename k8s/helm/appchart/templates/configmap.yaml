@@ -5,6 +5,6 @@ metadata:
     name: {{.Release.Name}}
     namespace: {{ $.Values.namespace | default "default" }}
 data:
-    {{- range $index, $map := $.Values.envs }}
+    {{- range $index, $map := $.Values.properties }}
     {{ $map.name }}: {{ $map.value | quote}}
     {{- end }}

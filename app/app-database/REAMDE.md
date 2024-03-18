@@ -37,3 +37,22 @@ curl http://localhost:8080/app-database/v1/comisaria
 ```
 docker rm cntappdatabase
 ```
+## base 64
+```
+echo -n "my-password" | base64
+echo "bXktcGFzc3dvcmQ=" | base64 --decode
+```
+## PUSH
+```
+docker push wlopezob/app-database
+```
+
+## install with HELM and values.yaml
+```
+helm repo add app https://mihelm01.blob.core.windows.net/helm/
+helm install --debug --dry-run -f values-des.yaml app-database  app/appchart
+helm install --debug -f values-des.yaml app-database  app/appchart
+helm uninstall --debug app-database
+# remove repo
+helm repo remove app
+```

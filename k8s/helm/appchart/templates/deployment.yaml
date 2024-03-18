@@ -26,6 +26,8 @@ spec:
           envFrom:
           - configMapRef:
               name: {{.Release.Name}}
+          - secretRef:
+              name: {{.Release.Name}}
       {{- if  $.Values.resources_plan }}    
           resources:
             limits:

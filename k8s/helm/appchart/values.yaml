@@ -1,12 +1,15 @@
 namespace: casino
 env: dev
-# envs:
+# properties:
 #   - name: JAVA_OPTS
 #     value: "-Djava.awt.headless=true,-Xms768m,-Xmx768m,-XX:+UseG1GC,-XX:+DisableExplicitGC,-XshowSettings:properties,-XX:+UnlockExperimentalVMOptions,-XX:+UseCGroupMemoryLimitForHeap,-XX:MaxRAMFraction=1"
 #   - name: SPRING_CLOUD_CONFIG_LABEL
 #     value: "master"
 #   - name: SPRING_PROFILES_ACTIVE
 #     value: dev
+# secret:
+#   - name: PASSWORD
+#     value: ""
 image:
   imageRegistry: wlopezob
   tag: latest
@@ -28,9 +31,9 @@ service:
   port: 80
   targetPort: 8080
 
-ingress:
-  path: /apirust-v1
-  #targetPath: /apirust-v1
-  pathType: ImplementationSpecific
-  port: 80
-  #host: apirust.com
+# ingress:
+#   path: /apirust-v1
+#   #targetPath: /apirust-v1
+#   pathType: ImplementationSpecific
+#   port: 80
+#   #host: apirust.com

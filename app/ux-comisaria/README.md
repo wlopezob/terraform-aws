@@ -22,3 +22,13 @@ curl http://localhost:8081/ux-comisaria/v1/comisaria
 ```
 docker rm cntuxcomisaria -f
 ```
+
+## install with HELM and values.yaml
+```
+helm repo update app https://mihelm01.blob.core.windows.net/helm/
+helm install --debug --dry-run -f values-des.yaml ux-comisaria  app/appchart
+helm install --debug -f values-des.yaml ux-comisaria  app/appchart
+helm uninstall --debug ux-comisaria
+# remove repo
+helm repo remove app
+```

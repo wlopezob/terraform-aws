@@ -1,0 +1,36 @@
+namespace: comisaria
+properties:
+  - name: SERVER_PORT
+    value: 80
+  - name: HTTP_CLIENT_APP_DATABASE_V1_URL
+    value: http://app-database/app-database/v1
+#  - name: SPRING_PROFILES_ACTIVE
+#    value: dev
+deployment:
+  replicaCount: 2
+  # imagePullSecretsName: ""
+  # labels:
+  #   action: custom
+  #   demo: demo01
+image:
+  imageRegistry: wlopezob
+  tag: latest
+  port: 80
+
+env: des
+
+resources_plan:
+  cpu_limits: 0.5
+  cpu_requests: 40m
+  memory_limits: 512M
+  memory_requests: 256M
+
+service:
+  type: ClusterIP
+  servicePort: 80
+  targetPort: 80
+ingress:
+  path: /ux-comisaria/v1
+  #targetPath: /ux-comisaria/v1
+  pathType: ImplementationSpecific
+  port: 80
